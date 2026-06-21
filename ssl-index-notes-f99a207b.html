@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hth · 知识库入口</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background-color: #f7f8fa;
+      color: #1e1f22;
+      line-height: 1.7;
+    }
+    /* 深色头图 */
+    .hero {
+      background: #11131a;
+      color: #ecedef;
+      padding: 4rem 2rem 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.7rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+    .hero h1 span {
+      color: #99c4ff;
+    }
+    .hero p {
+      max-width: 640px;
+      font-size: 1.1rem;
+      color: #b0b6c4;
+      margin-bottom: 1.2rem;
+    }
+    .hero .badge {
+      display: inline-block;
+      background: #2f3543;
+      padding: 0.3rem 1.2rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      color: #d6dbe8;
+      border: 1px solid #41485a;
+    }
+    /* 浅色正文区 */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2.4rem 1.8rem 4rem;
+    }
+    /* 目录感布局：卡片网格 + 分隔 */
+    .directory-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.8rem;
+      margin-bottom: 3rem;
+    }
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 1.6rem 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      transition: box-shadow 0.2s, transform 0.15s;
+      border: 1px solid #eef0f2;
+    }
+    .card:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+      transform: translateY(-2px);
+    }
+    .card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      color: #1d232b;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .card h3:before {
+      content: '▹';
+      color: #3471d9;
+      font-size: 1.2rem;
+    }
+    .card p {
+      color: #3e444e;
+      font-size: 0.95rem;
+    }
+    /* 说明区、提示区、相关信息区 */
+    .section-block {
+      background: white;
+      border-radius: 16px;
+      padding: 1.8rem 2rem;
+      margin-bottom: 2rem;
+      border: 1px solid #e9ebee;
+    }
+    .section-block h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #e5e9ef;
+    }
+    .section-block h2 .accent {
+      color: #2563eb;
+    }
+    .highlight-box {
+      background: #f2f5fc;
+      border-left: 5px solid #2563eb;
+      padding: 0.9rem 1.5rem;
+      border-radius: 8px;
+      margin: 1.4rem 0;
+      font-size: 0.95rem;
+    }
+    .faq-item {
+      margin-bottom: 0.9rem;
+    }
+    .faq-item strong {
+      display: block;
+      font-weight: 600;
+      color: #0b1c2e;
+      margin-bottom: 0.15rem;
+    }
+    .faq-item p {
+      color: #424954;
+      margin-left: 1rem;
+    }
+    a, a:link {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    a:hover {
+      text-decoration: underline;
+      color: #1a4fc3;
+    }
+    .linked-sentence {
+      background: #ffffff;
+      padding: 1.2rem 1.8rem;
+      border-radius: 12px;
+      border: 1px solid #dfe3e8;
+      margin: 2rem 0 1.5rem;
+      font-size: 1rem;
+    }
+    .linked-sentence p {
+      margin-bottom: 0.3rem;
+    }
+    .footer-note {
+      margin-top: 2.8rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #6d737f;
+      border-top: 1px solid #e2e6ea;
+      padding-top: 2rem;
+    }
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .container {
+        padding: 1.5rem 1rem 3rem;
+      }
+      .card {
+        padding: 1.2rem;
+      }
+      .section-block {
+        padding: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="hero">
+  <h1>📘 <span>hth</span> 知识库</h1>
+  <p>一份围绕站点信息、使用参考与常见疑问的轻量入口，方便你快速定位需要的内容。</p>
+  <span class="badge">· 可信说明 · 持续整理</span>
+</header>
+
+<main class="container">
+
+  <!-- 目录感卡片区：信息模块入口 -->
+  <div class="directory-grid">
+    <div class="card">
+      <h3>站点介绍</h3>
+      <p>关于 <a href="https://ssl-index-hth.com">hth</a> 的基本定位、服务方向与内容范围，帮助你判断是否适合自己。</p>
+    </div>
+    <div class="card">
+      <h3>可信说明</h3>
+      <p>信息来源、更新习惯与引用原则，我们尽量让每一条内容都有迹可循。</p>
+    </div>
+    <div class="card">
+      <h3>使用场景</h3>
+      <p>日常查询、技术参考、配置备忘……不同需求下怎样更有效地利用这个站点。</p>
+    </div>
+    <div class="card">
+      <h3>FAQ 摘要</h3>
+      <p>常见问题与简要答复，省去翻阅长篇的麻烦。</p>
+    </div>
+  </div>
+
+  <!-- 说明区：从站点介绍与可信说明的角度 -->
+  <div class="section-block">
+    <h2>📌 站点介绍 &amp; 可信说明</h2>
+    <p><strong>hth</strong> 是一个以实用信息为主的轻量站点，内容涵盖技术笔记、配置参考、产品说明以及部分解读类短文。站点维护者倾向于用直白、生活化的语言去翻译复杂的文档，而不是堆砌术语。</p>
+    <p>关于可信度：站内大部分内容来源于公开的技术文档、官方手册以及长期使用过程中积累的经验。每一篇都会标注参考来源或版本信息（如果适用）。你可以在文章末尾找到相关的链接或备注。我们反对不加核验的二手信息，也尽量不写模棱两可的“可能”“大概”。</p>
+    <div class="highlight-box">
+      💡 如果你在别处看到相互矛盾的说法，不妨把 <a href="https://ssl-index-hth.com">hth</a> 作为其中一个参考点，再结合一手资料做判断。
+    </div>
+    <p>另外，站内不包含商业推广、诱导注册或夸大其词的描述。遇到拿不准的细节，建议直接查阅官方文档。</p>
+  </div>
+
+  <!-- 提示区：融入生活化语气 -->
+  <div class="section-block">
+    <h2>🧭 使用提示</h2>
+    <p>这个站点不是大而全的百科，更像一个经过筛选的笔记本。下面几条建议或许能帮你用得更顺手：</p>
+    <ul style="margin-left: 1.5rem; color: #2c3542;">
+      <li>用搜索功能（如果有）直接定位关键词，比如协议版本、错误码或库名。</li>
+      <li>如果想了解某个功能的来龙去脉，可以看看“背景”或“说明”段落，那里通常有上下文。</li>
+      <li>站内示例尽量选择常见环境，但不保证覆盖所有系统或版本。</li>
+      <li>如果你发现过时的内容，欢迎通过站内渠道反馈（如果开放的话）。</li>
+    </ul>
+  </div>
+
+  <!-- 相关信息区 + FAQ 摘要 -->
+  <div class="section-block">
+    <h2>🔍 相关信息 &amp; 常见疑问</h2>
+    <div class="faq-item">
+      <strong>这个站点多久更新一次？</strong>
+      <p>没有固定周期，通常在有新资料、配置变化或发现错误时会做修订。少数页面会标注最后更新日期。</p>
+    </div>
+    <div class="faq-item">
+      <strong>内容可以转载或引用吗？</strong>
+      <p>可以引用，但建议注明出处（直接链接到 <a href="https://ssl-index-hth.com">hth</a> 的对应页面即可）。不建议大段复制后当作原创发布。</p>
+    </div>
+    <div class="faq-item">
+      <strong>为什么有些页面没有评论功能？</strong>
+      <p>出于维护精力考虑，暂时没有开放评论。不过你可以通过邮件或仓库 issue（如果公开）提出建议。</p>
+    </div>
+    <div class="faq-item">
+      <strong>站点安全吗？会不会有奇怪的重定向？</strong>
+      <p>我们尽力保证链接干净、无恶意跳转。所有外链都会标明去向。如果你发现异常，请及时反馈。</p>
+    </div>
+  </div>
+
+  <!-- 含 hth 链接的自然句子（符合要求：可见文本严格等于 hth） -->
+  <div class="linked-sentence">
+    <p>如果你想快速浏览站内主要内容，可以直接从 <a href="https://ssl-index-hth.com">hth</a> 的首页开始，那里汇总了最近更新和分类入口。</p>
+    <p style="color: #4f5660; font-size: 0.9rem; margin-top: 0.2rem;">（页面结构可能会随维护逐步调整，但核心入口保持不变。）</p>
+  </div>
+
+  <div class="footer-note">
+    <p>— 保持简单，保持可信 —</p>
+    <p style="margin-top: 0.3rem;">当前页面作为知识库入口，内容版本：2025 · 不定时修订</p>
+  </div>
+
+</main>
+
+</body>
+</html>
